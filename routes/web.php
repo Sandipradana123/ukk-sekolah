@@ -110,3 +110,8 @@ Route::post('tambah-pendataan-barang', [TambahController::class, 'tambahDataBara
 // route admin  tambah buku
 Route::get('admin-form-tambah-buku', [TambahBukuController::class, 'tambahBuku'])->name('admin.tambah-buku');
 Route::post('admin-form-tambah-buku-request', [TambahBukuController::class, 'tambahBukuRequest'])->name('admin.tambah-buku-request');
+
+// transaksi pengembalian buku
+Route::get('siswa-pengembalian-buku{id_pengembalian}', [PengembalianBukuController::class, 'pengembalianBukuForm'])->name('pengembalian-buku-form');
+
+

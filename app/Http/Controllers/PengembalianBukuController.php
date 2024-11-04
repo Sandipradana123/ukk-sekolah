@@ -14,4 +14,12 @@ class PengembalianBukuController extends Controller
             'dataPeminjam' => $dataPeminjam
         ]);
     }
+
+    public function pengembalianBukuForm($id_pengembalian){
+        $query = Peminjaman::with('buku','nisnSiswa')->where('id',$id_pengembalian)->get();
+        return view('dashboard-member.form-peminjaman.pengembalianBuku',[
+            'title' => 'pengembalian buku',
+            'query' => $query
+        ]);
+    }
 }

@@ -21,12 +21,12 @@
       <tr>
         @foreach ($dataPinjam as $item)
             <td>{{ $item->buku->judul }}</td>
-            <td>{{ $item->nisn->nama }}</td>
+            {{-- <td>{{ $item->nisn->nama }}</td> --}}
             <td>{{ $item->nama }}</td>
             <td>{{ $item->tanggal_peminjaman }}</td>
             <td>{{ $item->tanggal_pengembalian }}</td>
             <td>
-                <a class="btn btn-success" href="pengembalianBuku.php?id=<?= $item["id_peminjaman"]; ?>"> Kembalikan</a>
+                <a class="btn btn-success" href="{{ route('pengembalian-buku-form',$item->id) }}"> Kembalikan</a>
               </td>
         @endforeach
       </tr>

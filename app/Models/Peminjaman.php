@@ -20,7 +20,7 @@ class Peminjaman extends Model
         return $this->belongsTo(Buku::class,'buku_id','buku_id');
     }
 
-    public function nisn(){
+    public function nisnSiswa(){
         return $this->belongsTo(Member::class,'nisn','nisn');
     }
 }
