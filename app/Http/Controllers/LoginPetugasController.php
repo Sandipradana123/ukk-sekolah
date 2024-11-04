@@ -14,7 +14,7 @@ class LoginPetugasController extends Controller
             $nisn = $request->nisn;
              // Simpan data user ke session
              session(['member' => $petugas,'member.nisn' => $nisn,'member.nama' => $nama]);
-             return redirect()->route('dashboard-siswa'); // Arahkan ke dashboard
+             return redirect()->route('dashboard-petugas'); // Arahkan ke dashboard
         }
     }
 }
