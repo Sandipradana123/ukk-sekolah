@@ -11,7 +11,7 @@
     <div class="container p-3 mt-5">
       <div class="card p-2 mt-5">
       <h1 class="text-center fw-bold p-3">Form Tambah buku</h1>
-      <form action="{{ route('admin.tambah-buku-request') }}" method="post"  class="mt-3 p-2">
+      <form action="{{ route('petugas.tambah-buku-request') }}" method="post"  class="mt-3 p-2">
         @csrf
 
         <div class="custom-css-form">

@@ -29,7 +29,7 @@
           <a class="nav-link active" aria-current="page" href="{{ route('dashboard-admin') }}">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-success" href="{{ route('admin.tambah-buku') }}">Tambah Buku</a>
+          <a class="nav-link text-success" href="{{ route('dashboard-petugas-tambahBuku') }}">Tambah Buku</a>
         </li>
       </ul>
     </div>

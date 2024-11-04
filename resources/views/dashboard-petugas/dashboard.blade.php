@@ -69,7 +69,7 @@
       </div>
         <div class="d-flex flex-wrap justify-content-center gap-2">
         <div class="cardImg">
-          <a href="{{ route('dashboard-daftar-buku') }}">
+          <a href="{{ route('dashboard-petugas-daftarBuku') }}">
             <img src="{{ asset('img/daftarBuku.png') }}" alt="daftar buku" style="max-width: 100%;" width="600px">
           </a>
         </div>

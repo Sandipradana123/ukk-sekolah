@@ -54,6 +54,15 @@ Route::get('dashboard-member', [DashboardAdminController::class, 'member'])->nam
 // route admin daftar buku
 Route::get('dashboard-admin-daftar-buku', [DashboardAdminController::class, 'daftarBuku'])->name('dashboard-daftarBuku');
 
+
+// route petugas daftar buku
+Route::get('dashboard-petugas-daftar-buku', [DashboardPetugasController::class, 'daftarBuku'])->name('dashboard-petugas-daftarBuku');
+
+// petugas tambah buku
+Route::get('dashboard-petugas-tambah-buku', [DashboardPetugasController::class, 'tambahBuku'])->name('dashboard-petugas-tambahBuku');
+Route::post('petugas-form-tambah-buku-request', [DashboardPetugasController::class, 'tambahBukuRequest'])->name('petugas.tambah-buku-request');
+
+
 // route admin form edit buku
 Route::get('dashboard-admin-form-edit-buku{id}', [DashboardAdminController::class, 'formEditBuku'])->name('dashboard-form-edit-buku');
 Route::put('dashboard-admin-form-edit-buku-request{buku_id}', [EditBukuController::class, 'editBuku'])->name('edit-buku');
