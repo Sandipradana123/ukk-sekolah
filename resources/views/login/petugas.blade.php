@@ -7,14 +7,14 @@
       {{-- <div class="position-absolute top-0 start-50 translate-middle">
         <img src="../../assets/adminLogo.png" class="" alt="adminLogo" width="85px">
       </div> --}}
-      <h1 class="pt-5 text-center fw-bold">Sign In</h1>
+      <h1 class="pt-5 text-center fw-bold">Petugas</h1>
       <hr>
     <form action="{{ route('petugas.login-request') }}" method="post" class="row g-3 p-4 needs-validation" novalidate>
       @csrf
     <label for="validationCustom01" class="form-label">Nama Lengkap</label>
   <div class="input-group mt-0">
     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
-    <input type="text" class="form-control" name="nama_admin" id="validationCustom01" required>
+    <input type="text" class="form-control" name="nama_petugas" id="validationCustom01" required>
     <div class="invalid-feedback">
         Masukkan Nama anda!
     </div>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardMemberController;
+use App\Http\Controllers\DashboardPetugasController;
 use App\Http\Controllers\DendaController;
 use App\Http\Controllers\EditBukuController;
 use App\Http\Controllers\LoginAdminController;
@@ -41,6 +42,10 @@ Route::post('petugas-login-request', [LoginPetugasController::class, 'login'])->
 Route::get('dashboard-siswa', [DashboardMemberController::class, 'dashboard'])->name('dashboard-siswa');
 Route::get('dashboard-member-buku', [DashboardMemberController::class, 'buku'])->name('dashboard-member.buku');
 Route::get('dashboard-detail-buku-{id}', [DashboardMemberController::class, 'detailBuku'])->name('dashboard-detail.buku');
+
+// route dasboard petugas
+Route::get('dashboard-petugas', [DashboardPetugasController::class, 'dashboard'])->name('dashboard-petugas');
+Route::get('dashboard-daftar-buku', [DashboardPetugasController::class, 'daftarBuku'])->name('dashboard-daftar-buku');
 
 // route dashboard admin
 Route::get('dashboard-admin', [DashboardAdminController::class, 'dashboard'])->name('dashboard-admin');
