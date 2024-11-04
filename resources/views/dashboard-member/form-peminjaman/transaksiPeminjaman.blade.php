@@ -21,7 +21,7 @@
       <tr>
         @foreach ($dataPinjam as $item)
             <td>{{ $item->buku->judul }}</td>
-            {{-- <td>{{ $item->nisn->nama }}</td> --}}
+            <td>{{ $item->nisn->nama }}</td>
             <td>{{ $item->nama }}</td>
             <td>{{ $item->tanggal_peminjaman }}</td>
             <td>{{ $item->tanggal_pengembalian }}</td>

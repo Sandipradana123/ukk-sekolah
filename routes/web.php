@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardMemberController;
 use App\Http\Controllers\DendaController;
 use App\Http\Controllers\EditBukuController;
 use App\Http\Controllers\LoginAdminController;
+use App\Http\Controllers\LoginPetugasController;
 use App\Http\Controllers\LoginSiswaController;
 use App\Http\Controllers\PeminjamanBukuController;
 use App\Http\Controllers\PeminjamanController;
@@ -30,9 +31,11 @@ use App\Http\Controllers\TambahController;
 // route login
 Route::get('/', [LoginController::class, 'login'])->name('home.login');
 Route::get('admin-login', [LoginController::class, 'adminLogin'])->name('admin.login');
+Route::get('petugas-login', [LoginController::class, 'petugasLogin'])->name('petugas.login');
 Route::get('siswa-login', [LoginController::class, 'siswaLogin'])->name('siswa.login');
 Route::post('siswa-login-request', [LoginSiswaController::class, 'login'])->name('siswa.login-request');
 Route::post('admin-login-request', [LoginAdminController::class, 'login'])->name('admin.login-request');
+Route::post('petugas-login-request', [LoginPetugasController::class, 'login'])->name('petugas.login-request');
 
 // route dashboard member
 Route::get('dashboard-siswa', [DashboardMemberController::class, 'dashboard'])->name('dashboard-siswa');

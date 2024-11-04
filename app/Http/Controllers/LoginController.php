@@ -22,4 +22,10 @@ class LoginController extends Controller
         ]);
     }
 
+    public function petugasLogin(){
+        return view('login.petugas',[
+            'title' => 'petugas login'
+        ]);
+    }
+
 }

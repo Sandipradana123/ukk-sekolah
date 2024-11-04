@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('peminjaman', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('buku_id');
             $table->unsignedBigInteger('nisn');
             $table->unsignedBigInteger('id_admin');
