@@ -14,7 +14,13 @@ class LoginSiswaController extends Controller
             $nama = $request->nama;
             $nisn = $request->nisn;
              // Simpan data user ke session
-             session(['member' => $user,'member.nisn' => $nisn,'member.nama' => $nama]);
+             session([
+                'member' => [
+                    'nisn' => $nisn,
+                    'nama' => $nama
+                ]
+            ]);
+            
 
     
 

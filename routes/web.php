@@ -43,11 +43,15 @@ Route::post('petugas-login-request', [LoginPetugasController::class, 'login'])->
 Route::get('siswa-logout', [LogoutController::class, 'logoutSiswa'])->name('logout-siswa');
 Route::get('petugas-logout', [LogoutController::class, 'logoutPetugas'])->name('logout-petugas');
 
+Route::middleware(['checkMember'])->group(function () {
+    Route::get('dashboard-siswa', [DashboardMemberController::class, 'dashboard'])->name('dashboard-siswa');
+    Route::get('dashboard-member-buku', [DashboardMemberController::class, 'buku'])->name('dashboard-member.buku');
+    Route::get('dashboard-detail-buku-{id}', [DashboardMemberController::class, 'detailBuku'])->name('dashboard-detail.buku');
+});
+
 
 // route dashboard member
-Route::get('dashboard-siswa', [DashboardMemberController::class, 'dashboard'])->name('dashboard-siswa');
-Route::get('dashboard-member-buku', [DashboardMemberController::class, 'buku'])->name('dashboard-member.buku');
-Route::get('dashboard-detail-buku-{id}', [DashboardMemberController::class, 'detailBuku'])->name('dashboard-detail.buku');
+
 
 // route dasboard petugas
 Route::get('dashboard-petugas', [DashboardPetugasController::class, 'dashboard'])->name('dashboard-petugas');

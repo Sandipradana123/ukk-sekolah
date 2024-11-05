@@ -11,25 +11,26 @@
         <th class="bg-primary text-light">Judul Buku</th>
         <th class="bg-primary text-light">Nisn</th>
         <th class="bg-primary text-light">Nama</th>
-        <th class="bg-primary text-light">Nama Admin</th>
         <th class="bg-primary text-light">Tanggal Peminjaman</th>
         <th class="bg-primary text-light">Tanggal Pengembalian</th>
         <th class="bg-primary text-light">Aksi</th>
       </tr>
       </thead>
       
-      <tr>
+     
         @foreach ($dataPinjam as $item)
+        <tr>
             <td>{{ $item->buku->judul }}</td>
-            {{-- <td>{{ $item->nisn->nama }}</td> --}}
-            <td>{{ $item->nama }}</td>
+            <td>{{ $item->nisn }}</td>
+            <td>{{ $item->nisnSiswa->nama }}</td>
             <td>{{ $item->tanggal_peminjaman }}</td>
             <td>{{ $item->tanggal_pengembalian }}</td>
             <td>
                 <a class="btn btn-success" href="{{ route('pengembalian-buku-form',$item->id) }}"> Kembalikan</a>
               </td>
+            </tr>
         @endforeach
-      </tr>
+     
     </table>
     </div>
   </div>

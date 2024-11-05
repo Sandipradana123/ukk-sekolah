@@ -30,5 +30,7 @@ class PeminjamanController extends Controller
             'tanggal_peminjaman' => $request->tgl_peminjaman,
             'tanggal_pengembalian' => $request->tgl_pengembalian
         ]);
+
+        return redirect()->route('dashboard-siswa');
     }
 }
