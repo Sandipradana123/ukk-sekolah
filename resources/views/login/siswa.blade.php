@@ -37,7 +37,7 @@
     <button class="btn btn-primary" type="submit" name="signIn">Sign In</button>
     <a class="btn btn-success" href="{{ route('home.login') }}">Batal</a>
   </div>
-  <p>Don't have an account yet? <a href="sign_up.php" class="text-decoration-none text-primary">Sign Up</a></p>
+  <p>Don't have an account yet? <a href="{{ route('registasi-member') }}" class="text-decoration-none text-primary">Sign Up</a></p>
 </form>
 </div>
 </div>

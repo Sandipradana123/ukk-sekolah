@@ -12,6 +12,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PeminjamanBukuController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PengembalianBukuController;
+use App\Http\Controllers\RegistrasiController;
 use App\Http\Controllers\TambahBukuController;
 use App\Http\Controllers\TransaksiDendaController;
 use App\Http\Controllers\TransaksiPengembalianController;
@@ -129,5 +130,8 @@ Route::post('admin-form-tambah-buku-request', [TambahBukuController::class, 'tam
 
 // transaksi pengembalian buku
 Route::get('siswa-pengembalian-buku{id_pengembalian}', [PengembalianBukuController::class, 'pengembalianBukuForm'])->name('pengembalian-buku-form');
+
+// route registasi
+Route::get('registasi-member', [RegistrasiController::class, 'registasi'])->name('registasi-member');
 
 
