@@ -1,25 +1,26 @@
 <?php
 
-use App\Http\Controllers\DashboardAdminController;
-use App\Http\Controllers\DashboardMemberController;
-use App\Http\Controllers\DashboardPetugasController;
-use App\Http\Controllers\DendaController;
-use App\Http\Controllers\EditBukuController;
-use App\Http\Controllers\LoginAdminController;
-use App\Http\Controllers\LoginPetugasController;
-use App\Http\Controllers\LoginSiswaController;
-use App\Http\Controllers\LogoutController;
-use App\Http\Controllers\PeminjamanBukuController;
-use App\Http\Controllers\PeminjamanController;
-use App\Http\Controllers\PengembalianBukuController;
-use App\Http\Controllers\RegistrasiController;
-use App\Http\Controllers\TambahBukuController;
-use App\Http\Controllers\TransaksiDendaController;
-use App\Http\Controllers\TransaksiPengembalianController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DendaController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\TambahController;
+use App\Http\Controllers\UlasanController;
+use App\Http\Controllers\EditBukuController;
+use App\Http\Controllers\LoginAdminController;
+use App\Http\Controllers\LoginSiswaController;
+use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\RegistrasiController;
+use App\Http\Controllers\TambahBukuController;
+use App\Http\Controllers\LoginPetugasController;
+use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\PeminjamanBukuController;
+use App\Http\Controllers\TransaksiDendaController;
+use App\Http\Controllers\DashboardMemberController;
+use App\Http\Controllers\DashboardPetugasController;
+use App\Http\Controllers\PengembalianBukuController;
+use App\Http\Controllers\TransaksiPengembalianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -134,5 +135,8 @@ Route::get('siswa-pengembalian-buku{id_pengembalian}', [PengembalianBukuControll
 // route registasi
 Route::get('registasi-member', [RegistrasiController::class, 'registasi'])->name('registasi-member');
 Route::post('registasi-request', [RegistrasiController::class, 'registasiRequest'])->name('registasi-request');
+
+// member ulasan
+Route::get('member-ulasan', [UlasanController::class, 'ulasan'])->name('member-ulasan');
 
 

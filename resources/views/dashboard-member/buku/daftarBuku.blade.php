@@ -14,7 +14,6 @@
         <a class="navbar-brand" href="#">
           <h6>PERPUSTAKAAN SMKN 1 MEJAYAN</h6>
         </a>
-        
         <a class="btn btn-tertiary" href="../dashboardMember.php">Dashboard</a>
       </div>
     </nav>
@@ -48,14 +47,52 @@
           </ul>
         <div class="card-body">
           <a class="btn btn-success" href="{{ route('dashboard-detail.buku',$item->buku_id) }}">Detail</a>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-ulasan{{ $item->buku_id }}">
+            ulasan
+          </button>
           </div>
         </div>
+
+        <!-- Modal ulasan -->
+<div class="modal fade" id="modal-ulasan{{ $item->buku_id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('member-ulasan') }}">
+          @csrf
+          <input type="text" name="bukuId" value="{{ $item->buku_id }}">
+         <input type="text" name="userId" value="{{ session('member.nisn') }}">
+          <div class="mb-3">
+            <label for="ulasan" class="form-label">Ulasan anda tentang buku ini</label>
+            <textarea class="form-control" id="ulasan" name="ulasan" rows="3"></textarea>
+        </div>        
+          <div class="mb-3">
+            <label for="rating" class="form-label">Rating</label>
+            <select class="form-select" name="rating" id="rating">
+              <option value="rating 1">rating 1</option>
+              <option value="rating 2">rating 2</option>
+              <option value="rating 3">rating 3</option>
+              <option value="rating 4">rating 4</option>
+              <option value="rating 5">rating 5</option>
+            </select>
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
        <?php endforeach; ?>
       </div>
-      
      </div>
-     
-     
 @endsection
 
  
