@@ -11,12 +11,10 @@
   <body>
   <div class="container">
     <div class="card p-2 mt-5">
-      <div class="position-absolute top-0 start-50 translate-middle">
-        <img src="../../assets/memberLogo.png" alt="adminLogo" width="85px">
-      </div>
       <h1 class="pt-5 text-center fw-bold">Sign Up</h1>
       <hr>
-    <form action="" method="post" class="row g-3 p-4 needs-validation" novalidate>
+    <form action="{{ route('registasi-request') }}" method="post" class="row g-3 p-4 needs-validation" novalidate>
+        @csrf
       
     <label for="validationCustom01" class="form-label">Nisn</label>
     <div class="input-group mt-0">
@@ -28,7 +26,7 @@
   </div>
     <label for="validationCustom01" class="form-label">Kode Member</label>
   <div class="input-group mt-0">
-    <input type="text" class="form-control" name="kode_member" id="validationCustom01" required>
+    <input type="text" class="form-control" name="kodeMember" id="validationCustom01" required>
     <div class="invalid-feedback">
         Kode member wajib diisi!
     </div>
@@ -44,23 +42,16 @@
   <label for="validationCustom02" class="form-label">Password</label>
   <div class="input-group mt-0">
     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-    <input type="password" class="form-control" id="validationCustom02" name="password" required>
+    <input type="text" class="form-control" id="validationCustom02" name="password" required>
     <div class="invalid-feedback">
         Password wajib diisi!
     </div>
   </div>
-  <label for="validationCustom02" class="form-label">Confirm Password</label>
-  <div class="input-group mt-0">
-    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-    <input type="password" class="form-control" id="validationCustom02" name="confirmPw" required>
-    <div class="invalid-feedback">
-        Konfirmasi password wajib diisi!
-    </div>
-  </div>
+ 
   
   <div class="col input-group mb-2">
   <label class="input-group-text" for="inputGroupSelect01">Gender</label>
-  <select class="form-select" id="inputGroupSelect01" name="jenis_kelamin">
+  <select class="form-select" id="inputGroupSelect01" name="jenisKelamin">
     <option selected>Choose</option>
     <option value="Laki laki">Laki laki</option>
     <option value="Perempuan">Perempuan</option>
@@ -108,7 +99,7 @@
   <label for="validationCustom01" class="form-label">Tanggal Pendaftaran</label>
   <div class="input-group mt-0">
     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-calendar-days"></i></span>
-    <input type="date" class="form-control" name="tgl_pendaftaran" id="validationCustom01" required>
+    <input type="date" class="form-control" name="tanggalPendaftaran" id="validationCustom01" required>
     <div class="invalid-feedback">
         Tanggal pendaftaran wajib diisi!
     </div>

@@ -133,5 +133,6 @@ Route::get('siswa-pengembalian-buku{id_pengembalian}', [PengembalianBukuControll
 
 // route registasi
 Route::get('registasi-member', [RegistrasiController::class, 'registasi'])->name('registasi-member');
+Route::post('registasi-request', [RegistrasiController::class, 'registasiRequest'])->name('registasi-request');
 
 
