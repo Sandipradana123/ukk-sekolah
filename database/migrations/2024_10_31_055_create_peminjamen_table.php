@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('buku_id');
             $table->unsignedBigInteger('nisn');
-            $table->unsignedBigInteger('id_admin');
             $table->date('tanggal_peminjaman');
             $table->date('tanggal_pengembalian');
             $table->timestamps();

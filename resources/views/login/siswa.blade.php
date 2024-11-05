@@ -2,7 +2,13 @@
 @extends('komponen.style')
 
 @section('content')
-
+{{-- modal gagal login --}}
+<!-- Tampilkan pesan error jika ada -->
+@if(session('errors'))
+<div class="alert alert-danger">
+    {{ session('errors') }}
+</div>
+@endif
   <div class="container">
     <div class="card p-2 mt-5">
       <h1 class="pt-5 text-center fw-bold">Siswa login</h1>

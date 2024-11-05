@@ -20,8 +20,14 @@ class LogoutController extends Controller
             // Hapus semua data dari session
     $request->session()->forget('petugas');
 
-    // Opsional: bisa juga menggunakan flush untuk menghapus semua data session
-    // $request->session()->flush();
+
+    // Arahkan ke halaman login atau halaman lain setelah logout
+    return redirect()->route('home.login'); // Ganti 'login' dengan nama route login Anda
+    }
+    public function logoutAdmin(Request $request){
+            // Hapus semua data dari session
+    $request->session()->forget('admin');
+
 
     // Arahkan ke halaman login atau halaman lain setelah logout
     return redirect()->route('home.login'); // Ganti 'login' dengan nama route login Anda

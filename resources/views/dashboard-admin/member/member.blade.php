@@ -34,7 +34,7 @@
             <td>{{ $item->nisn }}</td>
             <td>{{ $item->kode_member }}</td>
             <td>{{ $item->nama}}</td>
-            <td>{{ $item->jenis_kelamin }}</td>
+            <td>{{ $item['jenis kelamin'] }}</td>
             <td>{{ $item->kelas }}</td>
             <td>{{ $item->jurusan }}</td>
             <td>{{ $item->no_tlp }}</td>
@@ -54,13 +54,17 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form action="{{ route('hapus-member',$item->nisn) }}" method="POST">
+        @csrf
+        @method('DELETE')
       <div class="modal-body">
         apakah yakin ingin menghapus akun member dari {{ $item->nama }} ?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-primary">Yakin</button>
+        <button type="submit" class="btn btn-primary">Yakin</button>
       </div>
+    </form>
     </div>
   </div>
 </div>

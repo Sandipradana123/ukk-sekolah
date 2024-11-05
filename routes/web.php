@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HapusController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DendaController;
@@ -44,6 +45,7 @@ Route::post('petugas-login-request', [LoginPetugasController::class, 'login'])->
 // route logout
 Route::get('siswa-logout', [LogoutController::class, 'logoutSiswa'])->name('logout-siswa');
 Route::get('petugas-logout', [LogoutController::class, 'logoutPetugas'])->name('logout-petugas');
+Route::get('admin-logout', [LogoutController::class, 'logoutAdmin'])->name('logout-admin');
 
 Route::middleware(['checkMember'])->group(function () {
     Route::get('dashboard-siswa', [DashboardMemberController::class, 'dashboard'])->name('dashboard-siswa');
@@ -96,6 +98,7 @@ Route::get('peminjaman-buku', [PeminjamanBukuController::class, 'peminjamanBuku'
 
 // admin pengembalian buku
 Route::get('pengembalian-buku', [PengembalianBukuController::class, 'pengembalianBuku'])->name('pengembalian.buku');
+Route::delete('pengembalian-buku-request{id_pengembalian}', [PengembalianBukuController::class, 'pengembalianBukuRequest'])->name('kembalikan-buku');
 
 // admin daftarDenda
 Route::get('pengembalian-buku', [DendaController::class, 'denda'])->name('denda.buku');
@@ -138,5 +141,8 @@ Route::post('registasi-request', [RegistrasiController::class, 'registasiRequest
 
 // member ulasan
 Route::get('member-ulasan', [UlasanController::class, 'ulasan'])->name('member-ulasan');
+
+// route hapus member
+Route::delete('hapus-member{nisn}', [HapusController::class, 'hapusMember'])->name('hapus-member');
 
 

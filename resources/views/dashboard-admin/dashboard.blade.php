@@ -36,7 +36,7 @@
             <a class="dropdown-item text-center mb-2" href="#">Akun Terverifikasi <span class="text-primary"><i class="fa-solid fa-circle-check"></i></span></a>
           </li>
           <li>
-            <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="signOut.php">Sign Out <i class="fa-solid fa-right-to-bracket"></i></a>
+            <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="{{ route('logout-admin') }}">Logout <i class="fa-solid fa-right-to-bracket"></i></a>
           </li>
           </ul>
         </div>
@@ -95,8 +95,7 @@
     
     <footer class="shadow-lg bg-subtle p-3">
       <div class="container-fluid d-flex justify-content-between">
-      <p class="mt-2">Created by <span class="text-primary"> Mangandaralam Sakti</span> © 2023</p>
-      <p class="mt-2">versi 1.0</p>
+      <p class="mt-2">Created by <span class="text-primary"> Sandi pradana</span> © 2024</p>
       </div>
     </footer>
     
@@ -105,61 +104,3 @@
 </html>
 
 
-{{-- @extends('komponen.style')
-
-@section('content')
-
-    <div class="mt-5 p-4">
-      <?php
-      // Mendapatkan tanggal dan waktu saat ini
-      $date = date('Y-m-d H:i:s'); // Format tanggal dan waktu default (tahun-bulan-tanggal jam:menit:detik)
-      // Mendapatkan hari dalam format teks (e.g., Senin, Selasa, ...)
-      $day = date('l');
-      // Mendapatkan tanggal dalam format 1 hingga 31
-      $dayOfMonth = date('d');
-      // Mendapatkan bulan dalam format teks (e.g., Januari, Februari, ...)
-      $month = date('F');
-      // Mendapatkan tahun dalam format 4 digit (e.g., 2023)
-      $year = date('Y');
-      ?>
-
-      <h1 class="mt-5 fw-bold">Dashboard - <span class="fs-4 text-secondary"> <?php echo $day. " ". $dayOfMonth." ". " ". $month. " ". $year; ?> </span></h1>
-    
-      <div class="alert alert-success" role="alert">Selamat datang admin - <span class="fw-bold text-capitalize">{{ session('member.nama') }}</span> di Dashboard CuyPerpus</div>
-      
-      <div class="mt-4 p-3">
-
-        <div class="d-flex flex-wrap justify-content-center gap-2">
-        <div class="cardImg">
-          <a href="{{ route('dashboard-member') }}">
-            <img src="{{ asset('img/member.png') }}" alt="daftar member" style="max-width: 100%;" width="600px">
-          </a>
-        </div>
-        <div class="cardImg">
-          <a href="{{ route('dashboard-daftarBuku') }}">
-          <img src="{{ asset('img/bukuAdmin.png') }}" alt="daftar buku" style="max-width: 100%;" width="600px">
-          </a>
-        </div>
-
-        <div class="cardImg">
-          <a href="{{ route('pinjam.buku') }}">
-            <img src="{{ asset('img/peminjaman.png') }}" alt="peminjaman" style="max-width: 100%;" width="600px">
-          </a>
-        </div>
-        <div class="cardImg">
-          <a href="{{ route('dashboard-pengembalian.buku') }}">
-          <img src="{{ asset('img/pengembalianAdmin.png') }}" alt="pengembalian" style="max-width: 100%;" width="600px">
-          </a>
-        </div>
-      
-         <div class="cardImg">
-           <a href="{{ route('dashboard-denda.buku') }}">
-           <img src="{{ asset('img/denda.png') }}" alt="daftar buku" style="max-width: 100%;" width="600px">
-           </a>
-         </div>
-        </div>
-
-      </div>
-      
-    </div>
-    @endsection --}}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Peminjaman;
+use App\Models\Pengembalian;
 use Illuminate\Http\Request;
 
 class PengembalianBukuController extends Controller
@@ -22,4 +23,31 @@ class PengembalianBukuController extends Controller
             'query' => $query
         ]);
     }
+
+    public function pengembalianBukuRequest($id_pengembalian){
+        $post = Peminjaman::findOrFail($id_pengembalian); // Cari data berdasarkan ID
+        
+        // Simpan data yang akan ditambahkan ke tabel lain menggunakan objek $post
+        $idPeminjaman = $post->id;
+        $idBuku = $post->buku_id;
+        $nisn = $post->nisn;
+        $tenggatPengembalian = $post->tgl_pengembalian;
+        $bukuKembali = $post->buku_kembali ?? date('Y-m-d'); // Default ke tanggal s
+    
+        $dataPinjam = [
+            'id_peminjam' => $idPeminjaman,
+            'buku_id' => $idBuku,
+            'nisn' => $nisn,
+            'buku_kembali' => $bukuKembali,
+            'tanggal_pengembalian' => $tenggatPengembalian
+            // tambahkan data lain sesuai kebutuhan
+        ];
+        
+        $post->delete(); // Hapus data dari tabel Peminjaman
+    
+        Pengembalian::create($dataPinjam); // Tambahkan data ke tabel Pengembalian
+
+        return redirect()->route('dashboard-siswa');
+    }
+    
 }

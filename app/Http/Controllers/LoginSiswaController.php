@@ -20,11 +20,11 @@ class LoginSiswaController extends Controller
                     'nama' => $nama
                 ]
             ]);
-            
-
-    
-
              return redirect()->route('dashboard-siswa'); // Arahkan ke dashboard
+        }
+        else {
+            return redirect()->route('siswa.login')->with('errors', 'Login gagal ');
+
         }
     }
 }

@@ -17,13 +17,12 @@
           <a class="btn btn-secondary" href="{{ route('admin.login') }}">Admin</a>
           <a class="btn btn-warning" href="{{ route('petugas.login') }}">Petugas</a>
           <a class="btn btn-primary mb-2" href="{{ route('siswa.login') }}">Siswa</a>
-          <hr>
-          <a class="btn btn-success" href="../index.php">Kembali</a>
         </div>
       </div>
       </div>
     </div>
   </div>
+  
 @endsection
 
   

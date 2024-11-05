@@ -3,9 +3,12 @@
 @section('content')
 <div class="p-4 mt-5">
   <div class="card p-3 mt-5">
-<form action="" method="post">
+
 <h3>Form Pengembalian buku</h3>
 <?php foreach ($query as $item) : ?>
+<form action="{{ route('kembalikan-buku',$item->id) }}" method="post">
+  @csrf
+  @method('DELETE')
 <div class="mt-3 d-flex flex-wrap gap-3">
  <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Id Peminjaman</label>
@@ -13,11 +16,11 @@
 </div>
  <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Id Buku</label>
-  <input type="text" class="form-control" placeholder="id peminjaman" name="id_buku" id="id_buku" value="{{ $item->buku_id }}" readonly>
+  <input type="text" class="form-control" placeholder="id peminjaman" name="id_buku" id="buku_id" value="{{ $item->buku_id }}" readonly>
 </div>
  <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Judul Buku</label>
-  <input type="text" class="form-control" placeholder="Judul Buku" name="judul" id="judul" value="{{ $item->buku->judul }}" readonly>
+  <input type="text" class="form-control" placeholder="Judul Buku" name="judulBuku" id="judul" value="{{ $item->buku->judul }}" readonly>
 </div>
 </div>
 
@@ -53,14 +56,6 @@
 <?php endforeach; ?> 
 
 <div class="d-flex flex-wrap gap-4">
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Keterlambatan</label>
-  <input type="text" class="form-control" name="keterlambatan" id="keterlambatan" oninput="hitungDenda()" readonly>
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Denda</label>
-   <input type="number" class="form-control" name="denda" id="denda" readonly>
-</div>
 </div>
 <a class="btn btn-danger" href="TransaksiPeminjaman.php"> Batal</a>
 <button type="submit" class="btn btn-success" name="kembalikan">Kembalikan</button>
