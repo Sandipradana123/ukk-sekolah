@@ -41,4 +41,14 @@ class DashboardPetugasController extends Controller
         ]);
         return redirect()->route('dashboard-daftarBuku');
     }
+
+    public function formEditBuku($buku_id){
+        $kategori= KategoriBuku::all();
+        $reviewData = Buku::with('kategoriBuku')->where('buku_id',$buku_id)->first();
+        return view('dashboard-petugas.buku.updateBuku',[
+            'title' => 'petugas form edit buku',
+            'reviewData' => $reviewData,
+            'kategori' => $kategori
+        ]);
+    }
 }

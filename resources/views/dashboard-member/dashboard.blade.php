@@ -38,7 +38,7 @@
             <a class="dropdown-item text-center mb-2" href="#">Siswa</a>
           </li>
           <li>
-            <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="signOut.php">Sign Out <i class="fa-solid fa-right-to-bracket"></i></a>
+            <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="{{ route('logout-siswa') }}">Sign Out <i class="fa-solid fa-right-to-bracket"></i></a>
           </li>
           </ul>
         </div>

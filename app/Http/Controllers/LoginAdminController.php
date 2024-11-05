@@ -16,9 +16,10 @@ class LoginAdminController extends Controller
              // Simpan data user ke session
              session(['member.nama' => $nama]);
 
-    
-
              return redirect()->route('dashboard-admin'); // Arahkan ke dashboard
+        }
+        else {
+            return redirect()->back(); // Arahkan ke halaman login
         }
     }
 }

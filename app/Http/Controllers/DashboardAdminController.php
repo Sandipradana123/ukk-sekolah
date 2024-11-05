@@ -39,4 +39,19 @@ class DashboardAdminController extends Controller
             'kategori' => $kategori
         ]);
     }
+
+    public function adminTambahMember(Request $request){
+        Member::insert([
+            'nisn' => $request->nisn,
+            'kode_member' => $request->kode,
+            'nama' => $request->nama,
+            'password' => $request->password,
+            'jenis kelamin' => $request->jenisKelamin,
+            'kelas' => $request->kelas,
+            'jurusan' => $request->jurusan,
+            'tgl_pendaftaran' => $request->tanggalDaftar,
+        ]);
+
+        return redirect()->back();
+    }
 }

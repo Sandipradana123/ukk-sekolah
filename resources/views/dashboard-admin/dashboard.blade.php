@@ -85,11 +85,7 @@
           <img src="{{ asset('img/pengembalianAdmin.png') }}" alt="daftar buku" style="max-width: 100%;" width="600px">
           </a>
         </div>
-      
-         <div class="cardImg">
-          <a href="{{ route('dashboard-denda.buku') }}">
-           <img src="{{ asset('img/denda.png') }}" alt="daftar buku" style="max-width: 100%;" width="600px">
-           </a>
+    
          </div>
         </div>
 

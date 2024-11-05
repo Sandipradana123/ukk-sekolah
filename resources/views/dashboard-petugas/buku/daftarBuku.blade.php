@@ -56,7 +56,7 @@
                <li class="list-group-item">Id Buku : {{ $item->buku_id }}</li>
              </ul>
            <div class="card-body">
-             <a class="btn btn-success" href="{{ route('dashboard-form-edit-buku',$item->buku_id) }}" id="review">Edit</a>
+             <a class="btn btn-success" href="{{ route('dashboard-petugas-form-edit-buku',$item->buku_id) }}" id="review">Edit</a>
              <a class="btn btn-danger" href="deleteBuku.php?id=<?= $item["id_buku"]; ?>" onclick="return confirm('Yakin ingin menghapus data buku ? ');">Delete</a>
              </div>
            </div>

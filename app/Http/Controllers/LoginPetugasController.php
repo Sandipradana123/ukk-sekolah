@@ -14,7 +14,7 @@ class LoginPetugasController extends Controller
             $nama = $request->nama_petugas;
 
              // Simpan data user ke session
-             session(['member' => $petugas,'member.nama' => $nama]);
+             session(['petugas' => $petugas,'member.nama' => $nama]);
              return redirect()->route('dashboard-petugas'); // Arahkan ke dashboard
         }
         else {
