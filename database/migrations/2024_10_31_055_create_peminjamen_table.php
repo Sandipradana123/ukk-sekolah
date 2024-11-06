@@ -22,7 +22,7 @@ return new class extends Migration
             // tabel relasi
             $table->foreign('nisn')->references('nisn')->on('member')->onDelete('cascade');
             $table->foreign('buku_id')->references('buku_id')->on('buku')->onDelete('cascade');
-            $table->foreign('id_admin')->references('id')->on('admin')->onDelete('cascade');
+      
         });
     }
 

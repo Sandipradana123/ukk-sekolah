@@ -97,7 +97,8 @@ Route::post('pinjam-buku-request', [PeminjamanController::class, 'tambahPinjamBu
 Route::get('peminjaman-buku', [PeminjamanBukuController::class, 'peminjamanBuku'])->name('pinjam.buku');
 
 // admin pengembalian buku
-Route::get('pengembalian-buku', [PengembalianBukuController::class, 'pengembalianBuku'])->name('pengembalian.buku');
+Route::get('transaksi-pengembalian-buku-admin', [PengembalianBukuController::class, 'pengembalianBuku'])->name('pengembalian.buku-admin');
+
 Route::delete('pengembalian-buku-request{id_pengembalian}', [PengembalianBukuController::class, 'pengembalianBukuRequest'])->name('kembalikan-buku');
 
 // admin daftarDenda
@@ -144,5 +145,8 @@ Route::get('member-ulasan', [UlasanController::class, 'ulasan'])->name('member-u
 
 // route hapus member
 Route::delete('hapus-member{nisn}', [HapusController::class, 'hapusMember'])->name('hapus-member');
+Route::delete('admin-hapus-buku{buku_id}', [HapusController::class, 'hapusBuku'])->name('admin-hapus-buku');
+
+// route admin hapus buku
 
 

@@ -36,16 +36,10 @@
   </div>
 </nav>
 <div class="p-4 mt-4">
-      <!--search engine --->
-     <form action="" method="post" class="mt-5">
-       <div class="input-group d-flex justify-content-end mb-3">
-         <input class="border p-2 rounded rounded-end-0 bg-tertiary" type="text" name="keyword" id="keyword" placeholder="cari data buku...">
-         <button class="border border-start-0 bg-light rounded rounded-start-0" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
-       </div>
-      </form>
+   
        
        <!--Card buku-->
-       <div class="layout-card-custom">
+       <div class="layout-card-custom mt-5">
         @foreach ($buku as $item)
         <div class="card" style="width: 15rem;">
             <div class="card-body">
@@ -57,16 +51,41 @@
              </ul>
            <div class="card-body">
              <a class="btn btn-success" href="{{ route('dashboard-form-edit-buku',$item->buku_id) }}" id="review">Edit</a>
-             <a class="btn btn-danger" href="deleteBuku.php?id=<?= $item["id_buku"]; ?>" onclick="return confirm('Yakin ingin menghapus data buku ? ');">Delete</a>
+             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-hapus{{ $item->buku_id }}">
+              Delete
+            </button>
+            
              </div>
            </div>
+
+           <!-- Modal -->
+<div class="modal fade" id="modal-hapus{{ $item->buku_id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form action="{{ route('admin-hapus-buku',$item->buku_id) }}" method="POST">
+      @csrf
+      @method('DELETE')
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Konfirmasi</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        apakah anda yakin ingin menghapus buku {{ $item->judul }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
         @endforeach
        </div>
       </div>
       <footer class="shadow-lg bg-subtle p-3">
         <div class="container-fluid d-flex justify-content-between">
-        <p class="mt-2">Created by <span class="text-primary"> Mangandaralam Sakti</span> © 2023</p>
-        <p class="mt-2">versi 1.0</p>
+        <p class="mt-2">Created by <span class="text-primary"> Sandi pradana</span> © 2024</p>
         </div>
         </footer>
       

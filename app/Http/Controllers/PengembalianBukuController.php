@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PengembalianBukuController extends Controller
 {
     public function pengembalianBuku(){
-        $dataPeminjam = Peminjaman::all();
+        $dataPeminjam = Pengembalian::with('buku')->get();
         return view('dashboard-admin.pengembalian.pengembalianBuku',[
             'title' => 'pengembalian buku',
             'dataPeminjam' => $dataPeminjam
