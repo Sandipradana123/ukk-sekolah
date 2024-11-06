@@ -1,4 +1,4 @@
-@extends('komponen.style')
+@extends('dashboard-admin.komponen-admin.style')
 
 @section('content')
     <div class="p-4 mt-5">

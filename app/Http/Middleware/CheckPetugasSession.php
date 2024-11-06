@@ -5,9 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\Session;
 
-class CheckMemberSession
+class CheckPetugasSession
 {
     /**
      * Handle an incoming request.
@@ -16,8 +15,7 @@ class CheckMemberSession
      */
     public function handle(Request $request, Closure $next): Response
     {
-        
-        if (!session()->has('member')) {
+        if (!session()->has('petugas')) {
             return redirect()->route('home.login'); // Ganti 'login' dengan route login Anda
         }
         return $next($request);

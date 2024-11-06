@@ -14,7 +14,7 @@ class LoginAdminController extends Controller
         if ($user && $request->password === $user->password) {
             $nama = $request->nama_admin;
              // Simpan data user ke session
-             session(['member.nama' => $nama]);
+             session(['admin' => $nama]);
 
              return redirect()->route('dashboard-admin'); // Arahkan ke dashboard
         }

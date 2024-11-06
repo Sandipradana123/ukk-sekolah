@@ -53,57 +53,54 @@ Route::middleware(['checkMember'])->group(function () {
     Route::get('dashboard-detail-buku-{id}', [DashboardMemberController::class, 'detailBuku'])->name('dashboard-detail.buku');
 });
 
-
-// route dashboard member
-
-
 // route dasboard petugas
-Route::get('dashboard-petugas', [DashboardPetugasController::class, 'dashboard'])->name('dashboard-petugas');
-Route::get('dashboard-daftar-buku', [DashboardPetugasController::class, 'daftarBuku'])->name('dashboard-daftar-buku');
+Route::middleware(['checkPetugas'])->group(function () {
+    Route::get('dashboard-petugas', [DashboardPetugasController::class, 'dashboard'])->name('dashboard-petugas');
+    Route::get('dashboard-daftar-buku', [DashboardPetugasController::class, 'daftarBuku'])->name('dashboard-daftar-buku');
+    // route petugas daftar buku
+    Route::get('dashboard-petugas-daftar-buku', [DashboardPetugasController::class, 'daftarBuku'])->name('dashboard-petugas-daftarBuku');
+    // petugas tambah buku
+    Route::get('dashboard-petugas-tambah-buku', [DashboardPetugasController::class, 'tambahBuku'])->name('dashboard-petugas-tambahBuku');
+    Route::post('petugas-form-tambah-buku-request', [DashboardPetugasController::class, 'tambahBukuRequest'])->name('petugas.tambah-buku-request');
 
-// route dashboard admin
-Route::get('dashboard-home-admin', [DashboardAdminController::class, 'dashboard'])->name('dashboard-admin');
-Route::get('dashboard-member', [DashboardAdminController::class, 'member'])->name('dashboard-member');
-Route::get('dashboard-petugas', [DashboardPetugasController::class, 'dashboard'])->name('dashboard-petugas');
+    // petugas update buku
+    Route::get('dashboard-petugas-form-edit-buku{id}', [DashboardPetugasController::class, 'formEditBuku'])->name('dashboard-petugas-form-edit-buku');
+    Route::put('dashboard-petugas-form-edit-buku-request{buku_id}', [EditBukuController::class, 'editBukuPetugas'])->name('edit-buku-petugas');
+});
 
-// route admin tambah member
-Route::post('admin-tambah-member', [DashboardAdminController::class, 'adminTambahMember'])->name('admin-tambah-member');
+Route::middleware(['checkAdmin'])->group(function () {
+    Route::get('dashboard-home-admin', [DashboardAdminController::class, 'dashboard'])->name('dashboard-admin');
+    Route::get('dashboard-admin-member', [DashboardAdminController::class, 'member'])->name('dashboard-member');
 
-// route admin daftar buku
-Route::get('dashboard-admin-daftar-buku', [DashboardAdminController::class, 'daftarBuku'])->name('dashboard-daftarBuku');
+    // route admin tambah member
+    Route::post('admin-tambah-member', [DashboardAdminController::class, 'adminTambahMember'])->name('admin-tambah-member');
 
+    // route admin daftar buku
+    Route::get('dashboard-admin-daftar-buku', [DashboardAdminController::class, 'daftarBuku'])->name('dashboard-daftarBuku');
 
-// route petugas daftar buku
-Route::get('dashboard-petugas-daftar-buku', [DashboardPetugasController::class, 'daftarBuku'])->name('dashboard-petugas-daftarBuku');
+    // route admin form edit buku
+    Route::get('dashboard-admin-form-edit-buku{id}', [DashboardAdminController::class, 'formEditBuku'])->name('dashboard-form-edit-buku');
+    Route::put('dashboard-admin-form-edit-buku-request{buku_id}', [EditBukuController::class, 'editBuku'])->name('edit-buku');
 
-// petugas tambah buku
-Route::get('dashboard-petugas-tambah-buku', [DashboardPetugasController::class, 'tambahBuku'])->name('dashboard-petugas-tambahBuku');
-Route::post('petugas-form-tambah-buku-request', [DashboardPetugasController::class, 'tambahBukuRequest'])->name('petugas.tambah-buku-request');
+    // admin peminjaman buku
+    Route::get('peminjaman-buku', [PeminjamanBukuController::class, 'peminjamanBuku'])->name('pinjam.buku');
 
-// petugas update buku
-Route::get('dashboard-petugas-form-edit-buku{id}', [DashboardPetugasController::class, 'formEditBuku'])->name('dashboard-petugas-form-edit-buku');
-Route::put('dashboard-petugas-form-edit-buku-request{buku_id}', [EditBukuController::class, 'editBukuPetugas'])->name('edit-buku-petugas');
+    // admin pengembalian buku
+    Route::get('transaksi-pengembalian-buku-admin', [PengembalianBukuController::class, 'pengembalianBuku'])->name('pengembalian.buku-admin');
 
-// route admin form edit buku
-Route::get('dashboard-admin-form-edit-buku{id}', [DashboardAdminController::class, 'formEditBuku'])->name('dashboard-form-edit-buku');
-Route::put('dashboard-admin-form-edit-buku-request{buku_id}', [EditBukuController::class, 'editBuku'])->name('edit-buku');
+    Route::delete('pengembalian-buku-request{id_pengembalian}', [PengembalianBukuController::class, 'pengembalianBukuRequest'])->name('kembalikan-buku');
 
+    // route data petugas
+    Route::get('admin-daftar-petugas', [DashboardAdminController::class, 'daftarPetugas'])->name('admin-daftar-petugas');
+    // tambah petugas request
+    Route::post('admin-tambah-petugas-request', [DashboardAdminController::class, 'tambahPetugas'])->name('admin-tambah-petugas-request');
+    
+});
 
 // form pinjam buku
 Route::get('dashboard-pinjam-buku-{id}', [PeminjamanController::class, 'pinjamBuku'])->name('dashboard-pinjam.buku');
 
 Route::post('pinjam-buku-request', [PeminjamanController::class, 'tambahPinjamBuku'])->name('pinjam-buku-request');
-
-// admin peminjaman buku
-Route::get('peminjaman-buku', [PeminjamanBukuController::class, 'peminjamanBuku'])->name('pinjam.buku');
-
-// admin pengembalian buku
-Route::get('transaksi-pengembalian-buku-admin', [PengembalianBukuController::class, 'pengembalianBuku'])->name('pengembalian.buku-admin');
-
-Route::delete('pengembalian-buku-request{id_pengembalian}', [PengembalianBukuController::class, 'pengembalianBukuRequest'])->name('kembalikan-buku');
-
-// admin daftarDenda
-Route::get('pengembalian-buku', [DendaController::class, 'denda'])->name('denda.buku');
 
 // transaksi peminjaman
 Route::get('dashboard-peminjaman-buku', [DashboardMemberController::class, 'peminjamanBuku'])->name('dashboard-peminjaman.buku');
@@ -111,15 +108,10 @@ Route::get('dashboard-peminjaman-buku', [DashboardMemberController::class, 'pemi
 // transaksi pengembalian
 Route::get('dashboard-pengembalian-buku', [TransaksiPengembalianController::class, 'pengembalian'])->name('dashboard-pengembalian.buku');
 
-// transaksi denda
-Route::get('dashboard-denda-buku', [TransaksiDendaController::class, 'denda'])->name('dashboard-denda.buku');
 
 
 // filter buku
 Route::post('buku-filter', [DashboardMemberController::class, 'buku'])->name('buku.filter');
-
-
-
 
 Route::get('registasi', [AdminController::class, 'registasi'])->name('admin.registasi');
 Route::get('pendataan-barang', [AdminController::class, 'pendataanBarang'])->name('admin.pendataan-barang');
@@ -128,7 +120,6 @@ Route::get('ulasan-buku', [AdminController::class, 'ulasanBuku'])->name('admin.u
 Route::get('koleksi-pribadi', [AdminController::class, 'koleksiPribadi'])->name('admin.koleksi-pribadi');
 
 Route::post('tambah-pendataan-barang', [TambahController::class, 'tambahDataBarang'])->name('admin.tambah-data-barang');
-
 
 // route admin  tambah buku
 Route::get('admin-form-tambah-buku', [TambahBukuController::class, 'tambahBuku'])->name('admin.tambah-buku');
@@ -152,15 +143,6 @@ Route::delete('admin-hapus-buku{buku_id}', [HapusController::class, 'hapusBuku']
 
 // route melihat ulasan di adminn
 Route::get('daftar-ulasan-all', [UlasanController::class, 'ulasanAll'])->name('dashboard-admin-ulasan');
-
-
-// admin daftar petugas
-// Route::get('admin-daftar-petugas', [DashboardPetugasController::class, 'ulasanAll'])->name('admin-daftar-petugas');
-
-// dashboard admin ulasan
-
-
-
 
 
 

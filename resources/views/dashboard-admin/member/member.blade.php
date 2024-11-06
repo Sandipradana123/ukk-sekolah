@@ -1,4 +1,4 @@
-@extends('komponen.style')
+@extends('dashboard-admin.komponen-admin.style')
 
 @section('content')
     <div class="p-4 mt-5">
@@ -9,9 +9,9 @@
       <caption class="mt-5">List of Member</caption>
       <div class="table-responsive mt-5">
         <button type="button" class="btn btn-success mb-4" data-bs-toggle="modal" data-bs-target="#modalTambah">
-          <i class="fas fa-trash">tambah</i>
+          <i class="fas fa-plus"></i>
         </button>
-        <a href="{{ route('admin-daftar-petugas') }}" type="btn" class="btn btn-primary mb-4"><i class="fas fa-trash">petugas</i></a>
+        <a href="{{ route('admin-daftar-petugas') }}" type="btn" class="btn btn-primary mb-4"><i>petugas</i></a>
         <table class="table table-striped table-hover">
         <thead class="text-center">
           <tr>
@@ -36,7 +36,7 @@
             <td>{{ $item->tgl_pendaftaran }}</td>
             <td>
               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalHapus{{ $item->nisn }}">
-                <i class="fas fa-trash">hapus</i>
+                <i class="fas fa-trash"></i>
               </button>
               </td>
         </tr>         

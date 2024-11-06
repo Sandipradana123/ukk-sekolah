@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Buku;
 use App\Models\KategoriBuku;
 use App\Models\Member;
+use App\Models\Petugas;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -53,5 +54,21 @@ class DashboardAdminController extends Controller
         ]);
 
         return redirect()->back();
+    }
+
+    public function daftarPetugas(){
+        $dataPetugas = Petugas::all();
+        return view('dashboard-admin.petugas.daftarPetugas',[
+            'title' => 'data petugas',
+            'dataPetugas' => $dataPetugas
+        ]);
+    }
+
+    public function tambahPetugas(Request $request){
+        Petugas::insert([
+            'nama' => $request->namaPetugas,
+            'password' => $request->password
+        ]);
+        return redirect()->route('admin-daftar-petugas');
     }
 }

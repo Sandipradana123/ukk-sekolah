@@ -1,4 +1,4 @@
-@extends('komponen.style')
+@extends('dashboard-admin.komponen-admin.style')
 
 @section('content')
     <div class="p-4 mt-5">
@@ -15,16 +15,15 @@
         <th class="bg-primary text-light">Tanggal buku kembali</th>
       </tr>
     </thead>
-        <?php foreach ($dataPeminjam as $item) : ?>
-      <tr>
-        <td>{{ $item->id_pengembalian }}</td>
-        <td>{{ $item->nisnSiswa->nama }}</td>
-        <td>{{ $item->buku->judul }}</td>
-        <td>{{ $item->nisn }}</td>
-        <td>{{ $item->buku_kembali }}</td>
-        
-      </tr>
-        <?php endforeach; ?>
+    @foreach ($dataPeminjam as $item)
+    <tr>
+      <td>{{ $item->id_pengembalian }}</td>
+      <td>{{ $item->nisnSiswa->nama }}</td>
+      <td>{{ $item->buku->judul }}</td>
+      <td>{{ $item->nisn }}</td>
+      <td>{{ $item->buku_kembali }}</td>   
+    </tr>
+    @endforeach
     </table>
   </div>
  </div>

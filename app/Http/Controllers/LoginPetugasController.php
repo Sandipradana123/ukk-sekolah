@@ -11,10 +11,10 @@ class LoginPetugasController extends Controller
             $petugas = Petugas::where('nama',$request->nama_petugas)->first();
             
         if ($petugas && $request->password === $petugas->password) {
-            $nama = $request->nama_petugas;
+            $petugas = $request->nama_petugas;
 
              // Simpan data user ke session
-             session(['petugas' => $petugas,'member.nama' => $nama]);
+             session(['petugas' => $petugas]);
              return redirect()->route('dashboard-petugas'); // Arahkan ke dashboard
         }
         else {
