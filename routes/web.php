@@ -145,8 +145,13 @@ Route::get('member-ulasan', [UlasanController::class, 'ulasan'])->name('member-u
 
 // route hapus member
 Route::delete('hapus-member{nisn}', [HapusController::class, 'hapusMember'])->name('hapus-member');
-Route::delete('admin-hapus-buku{buku_id}', [HapusController::class, 'hapusBuku'])->name('admin-hapus-buku');
 
 // route admin hapus buku
+Route::delete('admin-hapus-buku{buku_id}', [HapusController::class, 'hapusBuku'])->name('admin-hapus-buku');
+
+// route melihat ulasan di adminn
+Route::get('daftar-ulasan-all', [UlasanController::class, 'ulasanAll'])->name('dashboard-admin-ulasan');
+
+
 
 

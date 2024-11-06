@@ -13,7 +13,7 @@
 <body>
 
     {{-- <nav class="navbar navbar-expand-lg bg-body-tertiary"> --}}
-        <div class="container-fluid">
+        {{-- <div class="container-fluid">
 
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
@@ -39,7 +39,7 @@
             </ul>
           </div>
         </div>
-      </nav>
+      </nav> --}}
     
     @yield('content')
     <nav class="navbar fixed-top bg-body-tertiary shadow-sm">

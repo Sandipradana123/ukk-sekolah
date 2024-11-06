@@ -18,4 +18,12 @@ class UlasanController extends Controller
             
         ]);
     }   
+
+    public function ulasanAll(){
+        $ulasan = UlasanBuku::with('buku','siswa')->get();
+        return view('dashboard-admin.ulasan.daftarUlasan',[
+            'title' => 'ulasan all',
+            'ulasan' => $ulasan
+        ]);
+    }
 }

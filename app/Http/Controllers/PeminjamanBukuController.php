@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PeminjamanBukuController extends Controller
 {
     public function peminjamanBuku(){
-        $dataPinjam = Peminjaman::all();
+        $dataPinjam = Peminjaman::with('buku','nisnSiswa')->get();
         return view('dashboard-admin.peminjaman.peminjamanBuku',[
             'title' => 'peminjaman buku',
             'dataPeminjam' => $dataPinjam

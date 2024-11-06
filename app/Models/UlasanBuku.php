@@ -11,4 +11,11 @@ class UlasanBuku extends Model
 
     protected $guarded = ['ulasan_id'];
     protected $table = 'ulasan_buku';
+    public function buku(){
+        return $this->belongsTo(Buku::class,'buku_id','buku_id');
+    }
+
+    public function siswa(){
+        return $this->belongsTo(Member::class,'user_id','nisn');
+    }
 }
