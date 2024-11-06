@@ -15,14 +15,23 @@
         <h4 class="card-text text-center">Akses Login</h4>
         <div class="row gap-2 p-2">
           <a class="btn btn-secondary" href="{{ route('admin.login') }}">Admin</a>
+<<<<<<< HEAD
           <a class="btn btn-primary mb-2" href="{{ route('siswa.login') }}">Siswa</a>
           <hr>
           <a class="btn btn-success" href="../index.php">Kembali</a>
+=======
+          <a class="btn btn-warning" href="{{ route('petugas.login') }}">Petugas</a>
+          <a class="btn btn-primary mb-2" href="{{ route('siswa.login') }}">Siswa</a>
+>>>>>>> main
         </div>
       </div>
       </div>
     </div>
   </div>
+<<<<<<< HEAD
+=======
+  
+>>>>>>> main
 @endsection
 
   

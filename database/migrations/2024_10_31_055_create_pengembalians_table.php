@@ -16,16 +16,24 @@ return new class extends Migration
             $table->integer('id_peminjam');
             $table->unsignedBigInteger('buku_id');
             $table->unsignedBigInteger('nisn');
+<<<<<<< HEAD
             $table->unsignedBigInteger('id_admin');
             $table->date('buku_kembali');
             $table->enum('keterlambatan',['ya','tidak']);
             $table->integer('denda');
+=======
+            $table->date('buku_kembali');
+>>>>>>> main
             $table->timestamps();
 
             // tabel relasi
             $table->foreign('buku_id')->references('buku_id')->on('buku')->onDelete('cascade');
             $table->foreign('nisn')->references('nisn')->on('member')->onDelete('cascade');
+<<<<<<< HEAD
             $table->foreign('id_admin')->references('id')->on('admin')->onDelete('cascade');
+=======
+           
+>>>>>>> main
         });
     }
 

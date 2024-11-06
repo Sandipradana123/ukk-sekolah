@@ -52,7 +52,12 @@ class DashboardMemberController extends Controller
     }
 
     public function peminjamanBuku(){
+<<<<<<< HEAD
         $dataPinjam = Peminjaman::with(['buku','nisn'])->get();
+=======
+        $userNisn = session('member.nisn'); // Mengambil nisn dari session
+        $dataPinjam = Peminjaman::with('nisnSiswa')->where('nisn', $userNisn)->get(); 
+>>>>>>> main
         return view('dashboard-member.form-peminjaman.transaksiPeminjaman',[
             'title' => 'transaksi pinjam',
             'dataPinjam' => $dataPinjam

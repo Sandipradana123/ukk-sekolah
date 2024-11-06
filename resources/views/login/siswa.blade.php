@@ -2,7 +2,17 @@
 @extends('komponen.style')
 
 @section('content')
+<<<<<<< HEAD
 
+=======
+{{-- modal gagal login --}}
+<!-- Tampilkan pesan error jika ada -->
+@if(session('errors'))
+<div class="alert alert-danger">
+    {{ session('errors') }}
+</div>
+@endif
+>>>>>>> main
   <div class="container">
     <div class="card p-2 mt-5">
       <h1 class="pt-5 text-center fw-bold">Siswa login</h1>
@@ -37,7 +47,11 @@
     <button class="btn btn-primary" type="submit" name="signIn">Sign In</button>
     <a class="btn btn-success" href="{{ route('home.login') }}">Batal</a>
   </div>
+<<<<<<< HEAD
   <p>Don't have an account yet? <a href="sign_up.php" class="text-decoration-none text-primary">Sign Up</a></p>
+=======
+  <p>Don't have an account yet? <a href="{{ route('registasi-member') }}" class="text-decoration-none text-primary">Sign Up</a></p>
+>>>>>>> main
 </form>
 </div>
 </div>

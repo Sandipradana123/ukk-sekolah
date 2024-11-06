@@ -36,7 +36,11 @@
             <a class="dropdown-item text-center mb-2" href="#">Akun Terverifikasi <span class="text-primary"><i class="fa-solid fa-circle-check"></i></span></a>
           </li>
           <li>
+<<<<<<< HEAD
             <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="signOut.php">Sign Out <i class="fa-solid fa-right-to-bracket"></i></a>
+=======
+            <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="{{ route('logout-admin') }}">Logout <i class="fa-solid fa-right-to-bracket"></i></a>
+>>>>>>> main
           </li>
           </ul>
         </div>
@@ -81,6 +85,7 @@
           </a>
         </div>
         <div class="cardImg">
+<<<<<<< HEAD
           <a href="{{ route('dashboard-pengembalian.buku') }}">
           <img src="{{ asset('img/pengembalianAdmin.png') }}" alt="daftar buku" style="max-width: 100%;" width="600px">
           </a>
@@ -90,6 +95,13 @@
           <a href="{{ route('dashboard-denda.buku') }}">
            <img src="{{ asset('img/denda.png') }}" alt="daftar buku" style="max-width: 100%;" width="600px">
            </a>
+=======
+          <a href="{{ route('pengembalian.buku-admin') }}">
+          <img src="{{ asset('img/pengembalianAdmin.png') }}" alt="daftar buku" style="max-width: 100%;" width="600px">
+          </a>
+        </div>
+    
+>>>>>>> main
          </div>
         </div>
 
@@ -99,8 +111,12 @@
     
     <footer class="shadow-lg bg-subtle p-3">
       <div class="container-fluid d-flex justify-content-between">
+<<<<<<< HEAD
       <p class="mt-2">Created by <span class="text-primary"> Mangandaralam Sakti</span> © 2023</p>
       <p class="mt-2">versi 1.0</p>
+=======
+      <p class="mt-2">Created by <span class="text-primary"> Sandi pradana</span> © 2024</p>
+>>>>>>> main
       </div>
     </footer>
     
@@ -109,6 +125,7 @@
 </html>
 
 
+<<<<<<< HEAD
 {{-- @extends('komponen.style')
 
 @section('content')
@@ -167,3 +184,5 @@
       
     </div>
     @endsection --}}
+=======
+>>>>>>> main

@@ -22,4 +22,13 @@ class LoginController extends Controller
         ]);
     }
 
+<<<<<<< HEAD
+=======
+    public function petugasLogin(){
+        return view('login.petugas',[
+            'title' => 'petugas login'
+        ]);
+    }
+
+>>>>>>> main
 }

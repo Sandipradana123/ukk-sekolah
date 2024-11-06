@@ -9,6 +9,7 @@
      <thead class="text-center">
       <tr>
         <th class="bg-primary text-light">Id Pengembalian</th>
+<<<<<<< HEAD
         <th class="bg-primary text-light">Id Buku</th>
         <th class="bg-primary text-light">Judul Buku</th>
         <th class="bg-primary text-light">Kategori</th>
@@ -21,10 +22,17 @@
         <th class="bg-primary text-light">Keterlambatan</th>
         <th class="bg-primary text-light">Denda</th>
         <th class="bg-primary text-light">Delete</th>
+=======
+        <th class="bg-primary text-light">peminjam</th>
+        <th class="bg-primary text-light">Judul Buku</th>
+        <th class="bg-primary text-light">Nisn</th>
+        <th class="bg-primary text-light">Tanggal buku kembali</th>
+>>>>>>> main
       </tr>
     </thead>
         <?php foreach ($dataPeminjam as $item) : ?>
       <tr>
+<<<<<<< HEAD
         <td><?= $item["id_pengembalian"]; ?></td>
         <td><?= $item["id_buku"]; ?></td>
         <td><?= $item["judul"]; ?></td>
@@ -42,6 +50,14 @@
            <a href="deletePengembalian.php?id=<?= $item["id_pengembalian"]; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ?');"><i class="fa-solid fa-trash"></i></a>
            </div>
           </td>
+=======
+        <td>{{ $item->id_pengembalian }}</td>
+        <td>{{ $item->nisnSiswa->nama }}</td>
+        <td>{{ $item->buku->judul }}</td>
+        <td>{{ $item->nisn }}</td>
+        <td>{{ $item->buku_kembali }}</td>
+        
+>>>>>>> main
       </tr>
         <?php endforeach; ?>
     </table>

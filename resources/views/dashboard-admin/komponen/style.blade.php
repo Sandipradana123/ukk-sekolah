@@ -6,10 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<<<<<<< HEAD
+=======
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+>>>>>>> main
 </head>
 <body>
 
     {{-- <nav class="navbar navbar-expand-lg bg-body-tertiary"> --}}
+<<<<<<< HEAD
         <div class="container-fluid">
 
           <div class="collapse navbar-collapse" id="navbarNav">
@@ -40,6 +47,12 @@
     
     @yield('content')
     <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
+=======
+        
+    
+    @yield('content')
+    {{-- <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
+>>>>>>> main
       <div class="container-fluid p-3">
         <a class="navbar-brand" href="#">
           <h6>PERPUSTAKAAN SMKN 1 MEJAYAN</h6>
@@ -47,7 +60,39 @@
         
         <a class="btn btn-tertiary" href="{{ route('dashboard-admin') }}">Dashboard</a>
       </div>
+<<<<<<< HEAD
     </nav>
+=======
+    </nav> --}}
+
+    <div class="container-fluid">
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.registasi') }}">Registasi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.pendataan-barang') }}">Pendataan barang</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.peminjaman') }}">Penjualan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.koleksi-pribadi') }}">Koleksi pribadi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.ulasan-buku') }}">Laporan</a>
+          </li>
+       
+        </ul>
+      </div>
+    </div>
+  </nav>
+>>>>>>> main
 
     {{-- <footer class="shadow-lg bg-subtle p-3">
       <div class="container-fluid d-flex justify-content-between">
@@ -57,7 +102,11 @@
 
       <footer class=" shadow-lg bg-subtle p-3">
         <div class="container-fluid d-flex justify-content-between">
+<<<<<<< HEAD
         <p class="mt-2">Created by <span class="text-primary"> Sandi pradana</span> © 2023</p>
+=======
+        <p class="mt-2">Created by <span class="text-primary"> Sandi pradana</span> © 2024</p>
+>>>>>>> main
         </div>
     </footer>
 

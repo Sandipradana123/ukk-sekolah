@@ -35,14 +35,10 @@
           </li>
           <li>
             <a class="dropdown-item text-center text-secondary" href="#"> <span class="text-capitalize">{{ session('member.nama') }}</span></a>
-            <a class="dropdown-item text-center mb-2" href="#">Siswa</a>
+            <a class="dropdown-item text-center mb-2" href="#">Petugas</a>
           </li>
           <li>
-<<<<<<< HEAD
-            <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="signOut.php">Sign Out <i class="fa-solid fa-right-to-bracket"></i></a>
-=======
-            <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="{{ route('logout-siswa') }}">Sign Out <i class="fa-solid fa-right-to-bracket"></i></a>
->>>>>>> main
+            <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="{{ route('logout-petugas') }}">Sign Out <i class="fa-solid fa-right-to-bracket"></i></a>
           </li>
           </ul>
         </div>
@@ -73,30 +69,10 @@
       </div>
         <div class="d-flex flex-wrap justify-content-center gap-2">
         <div class="cardImg">
-          <a href="{{ route('dashboard-member.buku') }}">
+          <a href="{{ route('dashboard-petugas-daftarBuku') }}">
             <img src="{{ asset('img/daftarBuku.png') }}" alt="daftar buku" style="max-width: 100%;" width="600px">
           </a>
         </div>
-        <div class="cardImg">
-          <a href="{{ route('dashboard-peminjaman.buku') }}">
-          <img src="{{ asset('img/peminjaman.png') }}" alt="peminjaman" style="max-width: 100%;" width="600px">
-          </a>
-        </div>
-
-        <div class="cardImg">
-          <a href="{{ route('dashboard-pengembalian.buku') }}">
-            <img src="{{ asset('img/pengembalian.png') }}" alt="pengembalian" style="max-width: 100%;" width="600px">
-          </a>
-        </div>
-<<<<<<< HEAD
-        <div class="cardImg">
-          <a href="{{ route('dashboard-denda.buku') }}">
-          <img src="{{ asset('img/denda.png') }}" alt="denda" style="max-width: 100%;" width="600px">
-          </a>
-        </div>
-=======
-
->>>>>>> main
        </div>
 
     </div>

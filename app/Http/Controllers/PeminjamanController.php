@@ -28,7 +28,15 @@ class PeminjamanController extends Controller
             'buku_id' => $request->buku_id,
             'nisn' => $request->nisn,
             'tanggal_peminjaman' => $request->tgl_peminjaman,
+<<<<<<< HEAD
             'tanggal_pengembalian' => $request->tgl_pengembalian
         ]);
+=======
+            'tanggal_pengembalian' => $request->tgl_pengembalian,
+            'status_peminjaman' => 'dipinjam'
+        ]);
+
+        return redirect()->route('dashboard-siswa');
+>>>>>>> main
     }
 }

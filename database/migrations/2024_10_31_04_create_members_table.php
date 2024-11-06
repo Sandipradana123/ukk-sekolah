@@ -19,6 +19,11 @@ return new class extends Migration
             $table->string('jenis kelamin');
             $table->string('kelas');
             $table->string('jurusan');
+<<<<<<< HEAD
+=======
+            $table->text('alamat');
+            $table->string('no_telepon');
+>>>>>>> main
             $table->date('tgl_pendaftaran');
             $table->timestamps();
         });

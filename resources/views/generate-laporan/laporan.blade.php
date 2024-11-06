@@ -11,30 +11,12 @@
         <th class="bg-primary text-light">Judul Buku</th>
         <th class="bg-primary text-light">Nisn</th>
         <th class="bg-primary text-light">Nama</th>
-<<<<<<< HEAD
-        <th class="bg-primary text-light">Nama Admin</th>
-=======
->>>>>>> main
         <th class="bg-primary text-light">Tanggal Peminjaman</th>
         <th class="bg-primary text-light">Tanggal Pengembalian</th>
         <th class="bg-primary text-light">Aksi</th>
       </tr>
       </thead>
       
-<<<<<<< HEAD
-      <tr>
-        @foreach ($dataPinjam as $item)
-            <td>{{ $item->buku->judul }}</td>
-            {{-- <td>{{ $item->nisn->nama }}</td> --}}
-            <td>{{ $item->nama }}</td>
-            <td>{{ $item->tanggal_peminjaman }}</td>
-            <td>{{ $item->tanggal_pengembalian }}</td>
-            <td>
-                <a class="btn btn-success" href="pengembalianBuku.php?id=<?= $item["id_peminjaman"]; ?>"> Kembalikan</a>
-              </td>
-        @endforeach
-      </tr>
-=======
      
         @foreach ($dataPinjam as $item)
         <tr>
@@ -49,7 +31,6 @@
             </tr>
         @endforeach
      
->>>>>>> main
     </table>
     </div>
   </div>
