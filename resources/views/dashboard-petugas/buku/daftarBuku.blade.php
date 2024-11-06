@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ route('dashboard-admin') }}">Dashboard</a>
+          <a class="nav-link active" aria-current="page" href="{{ route('dashboard-petugas') }}">Dashboard</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-success" href="{{ route('dashboard-petugas-tambahBuku') }}">Tambah Buku</a>
@@ -36,16 +36,14 @@
   </div>
 </nav>
 <div class="p-4 mt-4">
-      <!--search engine --->
-     <form action="" method="post" class="mt-5">
-       <div class="input-group d-flex justify-content-end mb-3">
-         <input class="border p-2 rounded rounded-end-0 bg-tertiary" type="text" name="keyword" id="keyword" placeholder="cari data buku...">
-         <button class="border border-start-0 bg-light rounded rounded-start-0" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
-       </div>
-      </form>
+     
+
        
        <!--Card buku-->
-       <div class="layout-card-custom">
+       <div class="mt-5">
+
+       </div>
+       <div class="layout-card-custom mt-5">
         @foreach ($buku as $item)
         <div class="card" style="width: 15rem;">
             <div class="card-body">
@@ -65,8 +63,7 @@
       </div>
       <footer class="shadow-lg bg-subtle p-3">
         <div class="container-fluid d-flex justify-content-between">
-        <p class="mt-2">Created by <span class="text-primary"> Mangandaralam Sakti</span> © 2023</p>
-        <p class="mt-2">versi 1.0</p>
+        <p class="mt-2">Created by <span class="text-primary"> Sandi pradana</span> © 2024</p>
         </div>
         </footer>
       

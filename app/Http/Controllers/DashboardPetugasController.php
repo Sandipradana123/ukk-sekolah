@@ -39,7 +39,7 @@ class DashboardPetugasController extends Controller
             'penerbit' => $request->penerbit,
             'tahun_terbit' => $request->tahun_terbit
         ]);
-        return redirect()->route('dashboard-daftarBuku');
+        return redirect()->route('dashboard-petugas-daftarBuku');
     }
 
     public function formEditBuku($buku_id){

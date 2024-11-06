@@ -64,6 +64,7 @@ Route::get('dashboard-daftar-buku', [DashboardPetugasController::class, 'daftarB
 // route dashboard admin
 Route::get('dashboard-home-admin', [DashboardAdminController::class, 'dashboard'])->name('dashboard-admin');
 Route::get('dashboard-member', [DashboardAdminController::class, 'member'])->name('dashboard-member');
+Route::get('dashboard-petugas', [DashboardPetugasController::class, 'dashboard'])->name('dashboard-petugas');
 
 // route admin tambah member
 Route::post('admin-tambah-member', [DashboardAdminController::class, 'adminTambahMember'])->name('admin-tambah-member');
