@@ -51,6 +51,8 @@ Route::middleware(['checkMember'])->group(function () {
     Route::get('dashboard-siswa', [DashboardMemberController::class, 'dashboard'])->name('dashboard-siswa');
     Route::get('dashboard-member-buku', [DashboardMemberController::class, 'buku'])->name('dashboard-member.buku');
     Route::get('dashboard-detail-buku-{id}', [DashboardMemberController::class, 'detailBuku'])->name('dashboard-detail.buku');
+
+    Route::delete('pengembalian-buku-request{id_pengembalian}', [PengembalianBukuController::class, 'pengembalianBukuRequest'])->name('kembalikan-buku');
 });
 
 // route dasboard petugas
@@ -88,7 +90,7 @@ Route::middleware(['checkAdmin'])->group(function () {
     // admin pengembalian buku
     Route::get('transaksi-pengembalian-buku-admin', [PengembalianBukuController::class, 'pengembalianBuku'])->name('pengembalian.buku-admin');
 
-    Route::delete('pengembalian-buku-request{id_pengembalian}', [PengembalianBukuController::class, 'pengembalianBukuRequest'])->name('kembalikan-buku');
+    
 
     // route data petugas
     Route::get('admin-daftar-petugas', [DashboardAdminController::class, 'daftarPetugas'])->name('admin-daftar-petugas');

@@ -28,7 +28,7 @@
             </a>
           </li>
           <li>
-            <a class="dropdown-item text-center text-secondary" href="#"> <span class="text-capitalize">{{ session('member.nama') }}</a>
+            <a class="dropdown-item text-center text-secondary" href="#"> <span class="text-capitalize">{{ session('admin') }}</a>
             </span>
           </li>
           <hr>
@@ -59,7 +59,6 @@
 
       <h1 class="mt-5 fw-bold">Dashboard - <span class="fs-4 text-secondary"> <?php echo $day. " ". $dayOfMonth." ". " ". $month. " ". $year; ?> </span></h1>
     
-      <div class="alert alert-success" role="alert">Selamat datang admin - <span class="fw-bold text-capitalize">{{ session('admin') }}</span></div>
       
       <div class="mt-4 p-3">
 
