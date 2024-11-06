@@ -2,19 +2,16 @@
 
 @section('content')
     <div class="p-4 mt-5">
-      <!--search engine --->
-     <form action="" method="post" class="mt-5">
-       <div class="input-group d-flex justify-content-end mb-3">
-         <input class="border p-2 rounded rounded-end-0 bg-tertiary" type="text" name="keyword" id="keyword" placeholder="cari data member...">
-         <button class="border border-start-0 bg-light rounded rounded-start-0" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
-       </div>
-      </form>
+     <div class="mt-5">
+
+     </div>
       
-      <caption>List of Member</caption>
-      <div class="table-responsive mt-3">
+      <caption class="mt-5">List of Member</caption>
+      <div class="table-responsive mt-5">
         <button type="button" class="btn btn-success mb-4" data-bs-toggle="modal" data-bs-target="#modalTambah">
           <i class="fas fa-trash">tambah</i>
         </button>
+        <a href="{{ route('admin-daftar-petugas') }}" type="btn" class="btn btn-primary mb-4"><i class="fas fa-trash">petugas</i></a>
         <table class="table table-striped table-hover">
         <thead class="text-center">
           <tr>
@@ -24,7 +21,6 @@
             <th class="bg-primary text-light">Jenis Kelamin</th>
             <th class="bg-primary text-light">Kelas</th>
             <th class="bg-primary text-light">Jurusan</th>
-            <th class="bg-primary text-light">No Telepon</th>
             <th class="bg-primary text-light">Pendaftaran</th>
             <th class="bg-primary text-light">Delete</th>
           </tr>
@@ -37,7 +33,6 @@
             <td>{{ $item['jenis kelamin'] }}</td>
             <td>{{ $item->kelas }}</td>
             <td>{{ $item->jurusan }}</td>
-            <td>{{ $item->no_tlp }}</td>
             <td>{{ $item->tgl_pendaftaran }}</td>
             <td>
               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalHapus{{ $item->nisn }}">

@@ -27,6 +27,8 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{ route('dashboard-admin') }}">Dashboard</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" aria-current="page" href="{{ route('dashboard-admin-ulasan') }}">Ulasan</a>
         </li>
         <li class="nav-item">

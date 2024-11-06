@@ -62,7 +62,7 @@ Route::get('dashboard-petugas', [DashboardPetugasController::class, 'dashboard']
 Route::get('dashboard-daftar-buku', [DashboardPetugasController::class, 'daftarBuku'])->name('dashboard-daftar-buku');
 
 // route dashboard admin
-Route::get('dashboard-admin', [DashboardAdminController::class, 'dashboard'])->name('dashboard-admin');
+Route::get('dashboard-home-admin', [DashboardAdminController::class, 'dashboard'])->name('dashboard-admin');
 Route::get('dashboard-member', [DashboardAdminController::class, 'member'])->name('dashboard-member');
 
 // route admin tambah member
@@ -151,6 +151,14 @@ Route::delete('admin-hapus-buku{buku_id}', [HapusController::class, 'hapusBuku']
 
 // route melihat ulasan di adminn
 Route::get('daftar-ulasan-all', [UlasanController::class, 'ulasanAll'])->name('dashboard-admin-ulasan');
+
+
+// admin daftar petugas
+// Route::get('admin-daftar-petugas', [DashboardPetugasController::class, 'ulasanAll'])->name('admin-daftar-petugas');
+
+// dashboard admin ulasan
+
+
 
 
 

@@ -15,8 +15,9 @@ class UlasanController extends Controller
             'buku_id' => $request->bukuId,
             'ulasan' => $request->ulasan,
             'rating' => $request->rating
-            
         ]);
+
+        return redirect()->back();
     }   
 
     public function ulasanAll(){
@@ -25,5 +26,6 @@ class UlasanController extends Controller
             'title' => 'ulasan all',
             'ulasan' => $ulasan
         ]);
+
     }
 }

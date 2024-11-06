@@ -15,27 +15,18 @@
     <table class="table table-striped table-hover">
       <thead class="text-center">
       <tr>
-        <th class="bg-primary text-light">Id Pengembalian</th>
-        <th class="bg-primary text-light">Id Buku</th>
-        <th class="bg-primary text-light">Judul Buku</th>
-        <th class="bg-primary text-light">Kategori</th>
+        <th class="bg-primary text-light">No</th>
+        <th class="bg-primary text-light">Judul buku</th>
         <th class="bg-primary text-light">Nisn</th>
-        <th class="bg-primary text-light">Nama</th>
-        <th class="bg-primary text-light">Nama Admin</th>
-        <th class="bg-primary text-light">Tanggal Pengembalian</th>
-        <th class="bg-primary text-light">Keterlambatan</th>
-        <th class="bg-primary text-light">Denda</th>
+        <th class="bg-primary text-light">Tanggal buku kembali</th>
       </tr>
       </thead>
       @foreach ($dataPengembalian as $item)
       <tr>
-        <td>{{ $item->judul }}</td>
-        <td>{{ $item->kategori }}</td>
+        <td>{{ $loop->iteration }}</td>
+        <td>{{ $item->buku->judul }}</td>
         <td>{{ $item->nisn }}</td>
-        <td>{{ $item->nama }}</td>
         <td>{{ $item->buku_kembali }}</td>
-        <td>{{ $item->keterlambatan }}</td>
-        <td>{{ $item->denda }}</td>
       </tr>
       @endforeach
     </table>

@@ -20,17 +20,17 @@
      <nav class="navbar fixed-top bg-body-tertiary shadow-sm">
       <div class="container-fluid p-3">
         <a class="navbar-brand" href="#">
-          <img src="../assets/logoNav.png" alt="logo" width="120px">
+          <h6>PERPUSTAKAAN SMKN 1 MEJAYAN</h6>
         </a>
   
         <div class="dropdown">
           <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="../assets/memberLogo.png" alt="memberLogo" width="40px">
+            <img src="{{ asset('img/memberLogo.png') }}" alt="memberLogo" width="40px">
           </button>
         <ul style="margin-left: -7rem;" class="dropdown-menu position-absolute mt-2 p-2">
           <li>
             <a class="dropdown-item text-center" href="#">
-            <img src="../assets/memberLogo.png" alt="adminLogo" width="30px">
+            <img src="{{ asset('img/memberLogo.png') }}" alt="adminLogo" width="30px">
             </a>
           </li>
           <li>
@@ -61,7 +61,7 @@
       
       <h1 class="mt-5 fw-bold">Dashboard - <span class="fs-4 text-secondary"> <?php echo $day. " ". $dayOfMonth." ". " ". $month. " ". $year; ?> </span></h1>
       <div class="alert alert-success" role="alert">Selamat datang member - <span class="text-capitalize fw-bold"> {{ session('member.nama') }}
- </span> di Dashboard CuyPerpus</div>
+ </span></div>
       
     <div class="mt-3 p-3">
       <div class="mt-2 mb-4">
@@ -92,7 +92,7 @@
       
   <footer class="shadow-lg bg-subtle p-3">
       <div class="container-fluid d-flex justify-content-between">
-      <p class="mt-2">Created by <span class="text-primary"> Sandi pradana</span> © 2023</p>
+      <p class="mt-2">Created by <span class="text-primary"> Sandi pradana</span> © 2024</p>
       </div>
     </footer>
     
